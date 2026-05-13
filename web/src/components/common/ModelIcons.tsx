@@ -13,6 +13,7 @@ const MODEL_COLORS: Record<string, string> = {
   gemini: '#4285F4',
   grok: '#000000',
   openai: '#10A37F',
+  openrouter: '#6467F2',
   minimax: '#E45735',
   claw402: '#7C3AED',
 }
@@ -45,6 +46,9 @@ export const getModelIcon = (modelType: string, props: IconProps = {}) => {
       break
     case 'openai':
       iconPath = '/icons/openai.svg'
+      break
+    case 'openrouter':
+      iconPath = '/icons/openrouter.svg'
       break
     case 'minimax':
       iconPath = '/icons/minimax.svg'
