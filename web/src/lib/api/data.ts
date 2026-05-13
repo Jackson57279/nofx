@@ -6,6 +6,7 @@ import type {
   Statistics,
   CompetitionData,
   PositionHistoryResponse,
+  AlchemyTokenPricesResponse,
 } from '../../types'
 import { API_BASE, httpClient } from './helpers'
 
@@ -133,6 +134,18 @@ export const dataApi = {
       { silent }
     )
     if (!result.success) throw new Error('Failed to fetch position history')
+    return result.data!
+  },
+
+  async getAlchemyTokenPrices(
+    apiKey: string,
+    symbols: string[]
+  ): Promise<AlchemyTokenPricesResponse> {
+    const result = await httpClient.post<AlchemyTokenPricesResponse>(
+      `${API_BASE}/market/alchemy/token-prices`,
+      { api_key: apiKey, symbols }
+    )
+    if (!result.success) throw new Error('Failed to fetch Alchemy token prices')
     return result.data!
   },
 }

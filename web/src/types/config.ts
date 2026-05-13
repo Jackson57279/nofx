@@ -166,3 +166,17 @@ export interface CurrentBeginnerWalletResponse {
   source?: string
   claw402_status?: string
 }
+
+export interface AlchemyTokenPrice {
+  symbol: string
+  currency?: string
+  value?: string
+  last_updated?: string
+  error?: string
+}
+
+export interface AlchemyTokenPricesResponse {
+  provider: 'alchemy'
+  prices: AlchemyTokenPrice[]
+  raw?: unknown
+}
