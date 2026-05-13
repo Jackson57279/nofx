@@ -81,3 +81,39 @@ func TestOptionsWithQwenClient(t *testing.T) {
 		t.Error("MaxTokens should be 6000")
 	}
 }
+
+func TestOptionsWithOpenRouterClient(t *testing.T) {
+	logger := mcp.NewNoopLogger()
+
+	client := NewOpenRouterClientWithOptions(
+		mcp.WithAPIKey("sk-or-openrouter-key"),
+		mcp.WithLogger(logger),
+		mcp.WithMaxTokens(7000),
+	)
+
+	openRouterClient := client.(*OpenRouterClient)
+
+	if openRouterClient.Provider != mcp.ProviderOpenRouter {
+		t.Error("Provider should be OpenRouter")
+	}
+
+	if openRouterClient.BaseURL != mcp.DefaultOpenRouterBaseURL {
+		t.Error("BaseURL should be OpenRouter default")
+	}
+
+	if openRouterClient.Model != mcp.DefaultOpenRouterModel {
+		t.Error("Model should be OpenRouter default")
+	}
+
+	if openRouterClient.APIKey != "sk-or-openrouter-key" {
+		t.Error("APIKey should be set from options")
+	}
+
+	if openRouterClient.Log != logger {
+		t.Error("Log should be set from options")
+	}
+
+	if openRouterClient.MaxTokens != 7000 {
+		t.Error("MaxTokens should be 7000")
+	}
+}

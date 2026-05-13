@@ -129,6 +129,11 @@ export const AI_PROVIDER_CONFIG: Record<string, AIProviderConfig> = {
     apiUrl: 'https://platform.minimax.io',
     apiName: 'MiniMax',
   },
+  openrouter: {
+    defaultModel: 'x-ai/grok-4.20',
+    apiUrl: 'https://openrouter.ai/settings/keys',
+    apiName: 'OpenRouter',
+  },
   claw402: {
     defaultModel: DEFAULT_CLAW402_MODEL,
     apiUrl: 'https://claw402.ai',

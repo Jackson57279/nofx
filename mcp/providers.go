@@ -4,14 +4,15 @@ package mcp
 // reference them for default configuration without importing sub-packages.
 // Provider sub-packages re-use these same values.
 const (
-	ProviderDeepSeek = "deepseek"
-	ProviderOpenAI   = "openai"
-	ProviderClaude   = "claude"
-	ProviderQwen     = "qwen"
-	ProviderGemini   = "gemini"
-	ProviderGrok     = "grok"
-	ProviderKimi     = "kimi"
-	ProviderMiniMax  = "minimax"
+	ProviderDeepSeek   = "deepseek"
+	ProviderOpenAI     = "openai"
+	ProviderClaude     = "claude"
+	ProviderQwen       = "qwen"
+	ProviderGemini     = "gemini"
+	ProviderGrok       = "grok"
+	ProviderKimi       = "kimi"
+	ProviderMiniMax    = "minimax"
+	ProviderOpenRouter = "openrouter"
 
 	ProviderClaw402 = "claw402"
 
@@ -26,4 +27,8 @@ const (
 	// Default MiniMax configuration (used by WithMiniMaxConfig convenience option)
 	DefaultMiniMaxBaseURL = "https://api.minimax.io/v1"
 	DefaultMiniMaxModel   = "MiniMax-M2.7"
+
+	// Default OpenRouter configuration (OpenAI-compatible API)
+	DefaultOpenRouterBaseURL = "https://openrouter.ai/api/v1"
+	DefaultOpenRouterModel   = "x-ai/grok-4.20"
 )
